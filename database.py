@@ -14,14 +14,15 @@ cur = con.cursor()
 
 # Normalizer from vnlp module
 normalizer = Normalizer()
-def normalize_message(text: str) -> str:
-    ''' Remove punctuations and accent marks, 
-    lower and deasciify the text, correct typos.'''
-    text = text.lower()
-    text = normalizer.remove_punctuations(text)
-    text = normalizer.remove_accent_marks(text)
-    text = " ".join(normalizer.deasciify(text.split()))
-    text = " ".join(normalizer.correct_typos(text.split()))
+def normalize_message(text: str, decapitalize=True, punctuation=True, accent_marks=True, 
+            deasciify=False, correct_typos=True) -> str:
+    '''By default; remove punctuations and accent marks, 
+    decapitalize the text, correct typos.'''
+    if decapitalize:    text = text.lower()
+    if punctuation:     text = normalizer.remove_punctuations(text)
+    if accent_marks:    text = normalizer.remove_accent_marks(text)
+    if deasciify:       text = " ".join(normalizer.deasciify(text.split()))
+    if correct_typos:   text = " ".join(normalizer.correct_typos(text.split()))
     return text
 
 def add_dialog(dialog: tuple) -> None:
