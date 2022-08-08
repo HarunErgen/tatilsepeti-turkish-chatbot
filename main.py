@@ -49,7 +49,9 @@ def confirm_query(update: Update, context: CallbackContext) -> int:
     query = update.callback_query.data
     update.callback_query.answer()
 
-    if query == 'confirmed': context.bot.send_message(chat_id=update.effective_chat.id, text="Başka soru sorabilirsiniz.")
+    if query == 'confirmed': 
+        context.bot.send_message(chat_id=update.effective_chat.id, text="Başka soru sorabilirsiniz.")
+        return MESSAGE
     if query == 'unconfirmed':
         dialogs = db.get_dialog_suggestions(current_user_message)
         buttons = [
@@ -62,7 +64,7 @@ def confirm_query(update: Update, context: CallbackContext) -> int:
         context.bot.send_message(chat_id=update.effective_chat.id, 
                                 reply_markup=InlineKeyboardMarkup(buttons),
                                 text="Bu sorulardan birinin cevabını mı arıyorsunuz?")
-    return DIALOG
+        return DIALOG
 
 def dialog_query(update: Update, context: CallbackContext) -> int:
     query = update.callback_query.data
