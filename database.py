@@ -6,9 +6,9 @@ from sentiment import get_sentiment
 # Constants
 UNIDENTIFIED_DIALOG = "Lütfen daha fazla ayrıntı veriniz."
 SIMILARITY_THRESHOLD = 0.3 # Similarity score must be greater than threshold to dialog to be returned.
+PATH_TO_DATABASE = r'.\bot.db'
 
 # Connection of database
-PATH_TO_DATABASE = r'.\bot.db'
 con = sqlite3.connect(PATH_TO_DATABASE, check_same_thread=False)
 cur = con.cursor()
 
