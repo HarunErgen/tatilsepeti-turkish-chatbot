@@ -1,0 +1,9 @@
+gensim==4.2.0
+numpy==1.22.4
+python_telegram_bot==13.12
+telegram==0.0.1
+tensorflow_hub==0.12.0
+tensorflow_text==2.9.0
+transformers==4.20.1
+vngrs_nlp==0.2
+vnlp==1.0.2
