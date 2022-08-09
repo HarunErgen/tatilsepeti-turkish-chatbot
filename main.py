@@ -42,7 +42,7 @@ def handle_message(update: Update, context: CallbackContext) -> int:
         return CONFIRM
     return MESSAGE
 
-def response(user_message) -> str:
+def response(user_message:str) -> str:
     return db.get_response(user_message)
 
 def confirm_query(update: Update, context: CallbackContext) -> int:
