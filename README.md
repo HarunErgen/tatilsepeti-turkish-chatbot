@@ -9,7 +9,8 @@ In order to understand the questions, the bot processes the asked questions by u
     + [Normalization](#normalization)
     + [Semantic Similarity](#semantic-similarity)
     + [Sentimental Analysis](#sentimental-analysis)
-
+### Requirements
+```python -m pip install -r requirements.txt```
 ## Conversation with the Bot
 At the start of the conversation, the bot greets you with an introductory sentence. Then it waits for input to answer your questions. Conversation with the bot proceeds through certain states. The state diagram can be shown as follows: <br />
 <br />
